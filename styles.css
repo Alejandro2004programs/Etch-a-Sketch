@@ -1,15 +1,23 @@
  div div{
     display: flex;
     justify-content: center;
-    align-items: center;
  }
 
  div div div {
     border: 2px solid black;
-    width: 40px;
+    width: 60px;
     height: 40px;
  }
 
- .hoverEffect {
-    background-color: #eeeeee;
+
+ #hoverEffect {
+    background-color: #ef0909;
  }
+
+ .header {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 6px;
+   margin-top: 6px;
+ }
+
