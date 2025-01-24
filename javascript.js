@@ -29,7 +29,7 @@ function removeGrid(currentGridSize) {
     }
 }
 
-function CalculateSizeFromInput(input) {
+function calculateGridSizeFromInput(input) {
     input = Number(input);
     if(typeof input != "number") {
         return "ERROR";
@@ -41,13 +41,10 @@ function CalculateSizeFromInput(input) {
     return input;
 }
 
-function changeOpacity(inputSquare) {
-    console.log(inputSquare);
-}
-
 fillGrid(16);
-
 const newGridContainer = document.querySelectorAll(".container");
+const resetButton = document.querySelector(".top-button");
+
 newGridContainer.forEach((gridSquare) => {
     gridSquare.addEventListener("mouseover", function(e) {
         if(e.target.classList == "square") {
@@ -72,11 +69,10 @@ newGridContainer.forEach((gridSquare) => {
 });
 });
 
-const resetButton = document.querySelector(".top-button");
 resetButton.addEventListener("click", () => {
     removeGrid(gridSize);
     let newGridSize = prompt("Select a new size for a board. Maximum size is 100: ");
-    while(CalculateSizeFromInput(newGridSize) == "ERROR") {
+    while(calculateGridSizeFromInput(newGridSize) == "ERROR") {
         newGridSize = prompt("Select a new size for a board. Maximum size is 100: ");
     }
     fillGrid(newGridSize);

@@ -1,11 +1,11 @@
-#hoverEffect {
-   background-color: blue;
-   opacity: .10;
-}
-
 .welcome-message {
   margin: 0;
   margin-top: 8px;
+}
+
+#hoverEffect {
+   background-color: blue;
+   opacity: .10;
 }
 
 body {
@@ -17,11 +17,16 @@ body {
    align-items: center;
  }
  
-.header {
-   display: flex;
-   justify-content: center;
- }
-
+ .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 960px;
+  height: 640px;
+  border: 2px solid black;
+}
+ 
  .row {
     display: flex;
     justify-content: center;
@@ -34,20 +39,3 @@ body {
    background: rgb(0 0 256);
    opacity: 0;
  }
-
- 
-
-
- .container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   width: 960px;
-   height: 640px;
-   border: 2px solid black;
- }
-
- /* * {
-   border: 2px solid red;
- } */
