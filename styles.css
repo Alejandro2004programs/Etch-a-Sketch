@@ -4,7 +4,7 @@
 }
 
 #hoverEffect {
-   background-color: blue;
+   background-color: black;
    opacity: .10;
 }
 
@@ -36,6 +36,6 @@ body {
 
 .square {
    width: 960px;
-   background: rgb(0 0 256);
+   background: black;
    opacity: 0;
  }
