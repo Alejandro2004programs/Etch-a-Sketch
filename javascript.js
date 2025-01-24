@@ -56,6 +56,14 @@ newGridContainer.forEach((gridSquare) => {
     });
 });
 
+newGridContainer.forEach((gridSquare) => {
+    gridSquare.addEventListener("click", function(e) {
+        if(e.target.classList == "square") {
+            e.target.setAttribute
+        }
+    });
+});
+
 const resetButton = document.querySelector(".top-button");
 resetButton.addEventListener("click", () => {
     removeGrid(gridSize);
@@ -64,3 +72,5 @@ resetButton.addEventListener("click", () => {
     fillGrid(newGridSize);
     gridSize = newGridSize;
 });
+
+
