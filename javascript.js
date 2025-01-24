@@ -10,6 +10,8 @@ function fillGrid(gridSize) {
         for(j = 0; j < gridSize; j++) {
             const gridSquares = document.createElement("div");
             gridSquares.setAttribute("class", "square");
+            // gridSquares.style.width = "60px";
+            // gridSquares.style.height = "40px";
             gridRow.appendChild(gridSquares);
         }
     }
@@ -43,8 +45,6 @@ function CalculateSizeFromInput(input) {
 fillGrid(16);
 
 const newGridContainer = document.querySelectorAll(".container");
-
-
 newGridContainer.forEach((gridSquare) => {
     gridSquare.addEventListener("mouseover", function(e) {
         if(e.target.classList == "square") {
