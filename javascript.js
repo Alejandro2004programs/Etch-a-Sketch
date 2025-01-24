@@ -1,6 +1,7 @@
 const GridContainer = document.querySelector(".container");
 let gridSize = 16;
 
+
 function fillGrid(gridSize) {
     let i, j;
     for(i = 0; i < gridSize; i++) {
@@ -10,8 +11,6 @@ function fillGrid(gridSize) {
         for(j = 0; j < gridSize; j++) {
             const gridSquares = document.createElement("div");
             gridSquares.setAttribute("class", "square");
-            // gridSquares.style.width = "60px";
-            // gridSquares.style.height = "40px";
             gridRow.appendChild(gridSquares);
         }
     }
@@ -39,7 +38,11 @@ function CalculateSizeFromInput(input) {
     if(input > 100) {
         return "ERROR";
     }
-    return GridSize;
+    return input;
+}
+
+function changeOpacity(inputSquare) {
+    console.log(inputSquare);
 }
 
 fillGrid(16);
@@ -48,7 +51,7 @@ const newGridContainer = document.querySelectorAll(".container");
 newGridContainer.forEach((gridSquare) => {
     gridSquare.addEventListener("mouseover", function(e) {
         if(e.target.classList == "square") {
-            e.target.setAttribute("id", "hoverEffect");
+            e.target.setAttribute("id", "hoverEffect");     
         }
     });
     gridSquare.addEventListener("mouseout", function(e) {
@@ -59,16 +62,23 @@ newGridContainer.forEach((gridSquare) => {
 newGridContainer.forEach((gridSquare) => {
     gridSquare.addEventListener("click", function(e) {
         if(e.target.classList == "square") {
-            e.target.setAttribute
+           if(e.target.style.opacity == 0) {
+                e.target.style.opacity = ".10";
+           }
+           else if(parseFloat(e.target.style.opacity) < 1){
+                e.target.style.opacity = (parseFloat(e.target.style.opacity) + 0.10).toString();
+           }
         }
-    });
+});
 });
 
 const resetButton = document.querySelector(".top-button");
 resetButton.addEventListener("click", () => {
     removeGrid(gridSize);
-    let newGridSize = prompt("Choose a new number of squares for columns and rows. Max size is 100: ");
-
+    let newGridSize = prompt("Select a new size for a board. Maximum size is 100: ");
+    while(CalculateSizeFromInput(newGridSize) == "ERROR") {
+        newGridSize = prompt("Select a new size for a board. Maximum size is 100: ");
+    }
     fillGrid(newGridSize);
     gridSize = newGridSize;
 });

@@ -1,5 +1,11 @@
 #hoverEffect {
-   background-color: #ef0909;
+   background-color: blue;
+   opacity: .10;
+}
+
+.welcome-message {
+  margin: 0;
+  margin-top: 8px;
 }
 
 body {
@@ -25,8 +31,11 @@ body {
 
 .square {
    width: 960px;
-   background-color: rgba(256,0,0,0);
+   background: rgb(0 0 256);
+   opacity: 0;
  }
+
+ 
 
 
  .container {
