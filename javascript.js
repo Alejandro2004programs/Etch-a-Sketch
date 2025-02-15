@@ -41,9 +41,20 @@ function calculateGridSizeFromInput(input) {
     return input;
 }
 
+function assignColors() {
+    const arrayOfColors = ["red", "blue", "green", "yellow", "pink", "purple", "brown", "black"];
+    arrayOfColors.forEach((color) => {
+        const currentColor = document.querySelector("." + color);
+        currentColor.style.backgroundColor = color;
+    });
+}
+
+assignColors()
 fillGrid(16);
+
 const newGridContainer = document.querySelectorAll(".container");
 const resetButton = document.querySelector(".top-button");
+const colors = document.querySelectorAll(".colorContainer");
 
 newGridContainer.forEach((gridSquare) => {
     gridSquare.addEventListener("mouseover", function(e) {
@@ -78,5 +89,42 @@ resetButton.addEventListener("click", () => {
     fillGrid(newGridSize);
     gridSize = newGridSize;
 });
+
+function changeSquareColor(color) {
+    document.documentElement.style.setProperty("--squareColor", color);
+
+}
+
+colors.forEach((color) => {
+    color.addEventListener("click", function(e) {
+        switch(e.target.classList[1]) {
+            case "red":
+                changeSquareColor("red");
+                break;
+            case "blue":
+                changeSquareColor("blue");
+                break;
+            case "green":
+                changeSquareColor("green");
+                break;
+            case "yellow":
+                changeSquareColor("yellow");
+                break;
+            case "pink":
+                changeSquareColor("pink");
+                break;
+            case "purple":
+                changeSquareColor("purple");
+                break;
+            case "brown":
+                changeSquareColor("brown");
+                break;
+            case "black":
+                changeSquareColor("black");
+                break;
+        }
+    });
+});
+
 
 

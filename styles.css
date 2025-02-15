@@ -1,10 +1,16 @@
+:root {
+  --squareColor: black;
+
+}
+
+
 .welcome-message {
   margin: 0;
   margin-top: 8px;
 }
 
 #hoverEffect {
-   background-color: black;
+   background-color: var(--squareColor);
    opacity: .10;
 }
 
@@ -36,6 +42,29 @@ body {
 
 .square {
    width: 960px;
-   background: black;
+   background: var(--squareColor);
    opacity: 0;
+ }
+
+ .bottomContainer {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+ }
+
+ .colorContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+ }
+
+ .color {
+   border: 2px solid black;
+   width: 24px;
+   height: 24px;
+   border-radius: 16px;
+ }
+
+ .color:hover {
+   cursor: pointer;
  }
